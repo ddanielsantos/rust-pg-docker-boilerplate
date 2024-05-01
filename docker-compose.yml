@@ -1,0 +1,15 @@
+services:
+    db:
+      image: postgres:latest
+      hostname: db
+      environment:
+        - POSTGRES_PASSWORD=super_strong_pass
+        - POSTGRES_USER=develop
+        - POSTGRES_DB=devdb
+      ports:
+        - "5432:5432"
+      deploy:
+        resources:
+          limits:
+            cpus: "0.25"
+            memory: "210MB"
